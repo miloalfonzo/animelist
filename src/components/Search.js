@@ -3,10 +3,24 @@ import Error from "./Error";
 import styled from "styled-components";
 
 const Input = styled.input`
-  padding: 10px;
+  margin-top: 10px;
+  width: 30vw;
+  padding: 15px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  border: none;
+  --webkit-appearance: none;
 `;
 const Button = styled.button`
-  padding: 10px;
+  padding: 15px;
+  background: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  --webkit-appearance: none;
+  &:hover i {
+    transform: scale(1.5);
+  }
 `;
 const Search = ({ setAnimesearch }) => {
   const [search, setSearch] = useState({
@@ -47,7 +61,7 @@ const Search = ({ setAnimesearch }) => {
           value={anime}
         />
         <Button type="submit" value="submit">
-          Search
+          <i class="fas fa-search"></i>
         </Button>
       </form>
     </div>

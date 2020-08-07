@@ -1,6 +1,8 @@
+html,
 body {
   margin: 0;
   padding: o;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Archivo", sans-serif;
+  color: #fff;
 }

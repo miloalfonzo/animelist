@@ -2,6 +2,16 @@ import React, { useState, useEffect } from "react";
 import Search from "./components/Search";
 import AnimeList from "./components/AnimeList";
 import axios from "axios";
+import styled from "styled-components";
+
+const Header = styled.div`
+  padding: 30px;
+  height: 100px;
+  background-color: #369;
+  h2 {
+    margin: 0;
+  }
+`;
 
 function App() {
   const [animesearch, setAnimesearch] = useState({});
@@ -22,8 +32,10 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Esto va a ser una app otaka</h2>
-      <Search setAnimesearch={setAnimesearch} />
+      <Header>
+        <h2>Find your favorite anime on My Anime List!</h2>
+        <Search setAnimesearch={setAnimesearch} />
+      </Header>
       <AnimeList anime={anime} />
     </div>
   );
