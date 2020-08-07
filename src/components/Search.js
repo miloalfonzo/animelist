@@ -3,7 +3,6 @@ import Error from "./Error";
 import styled from "styled-components";
 
 const Input = styled.input`
-  margin-top: 10px;
   width: 30vw;
   padding: 15px;
   border-radius: 5px 0 0 5px;
@@ -22,6 +21,11 @@ const Button = styled.button`
     transform: scale(1.5);
   }
 `;
+
+const Form = styled.form`
+  padding: 15px;
+`;
+
 const Search = ({ setAnimesearch }) => {
   const [search, setSearch] = useState({
     anime: ""
@@ -52,7 +56,7 @@ const Search = ({ setAnimesearch }) => {
   return (
     <div>
       {error ? <Error msg="Tenes que ingresar un anime correctamente" /> : null}
-      <form onSubmit={onSubmit}>
+      <Form onSubmit={onSubmit}>
         <Input
           type="text"
           name="anime"
@@ -63,7 +67,7 @@ const Search = ({ setAnimesearch }) => {
         <Button type="submit" value="submit">
           <i class="fas fa-search"></i>
         </Button>
-      </form>
+      </Form>
     </div>
   );
 };
