@@ -7,6 +7,9 @@ const Container = styled.div`
   border-radius: 0 0 10px 10px;
   color: #000022;
   border: 0.02px solid #aaa;
+  -webkit-box-shadow: 4px 6px 7px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 4px 6px 7px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 4px 6px 7px -2px rgba(0, 0, 0, 0.75);
 
   img {
     border-radius: 10px;
