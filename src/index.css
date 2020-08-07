@@ -6,3 +6,7 @@ body {
   font-family: "Archivo", sans-serif;
   color: #fff;
 }
+
+a {
+  text-decoration: none;
+}

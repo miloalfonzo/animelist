@@ -1,5 +1,6 @@
 import React from "react";
 import Anime from "./Anime";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -13,7 +14,9 @@ const AnimeList = ({ anime }) => {
   return (
     <Container>
       {anime.map((animes) => (
-        <Anime key={animes.mal_id} animes={animes} />
+        <Link to={`/search/${animes.mal_id}`}>
+          <Anime key={animes.mal_id} animes={animes} />
+        </Link>
       ))}
     </Container>
   );

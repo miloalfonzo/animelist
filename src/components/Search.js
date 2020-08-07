@@ -8,7 +8,7 @@ const Input = styled.input`
   border-radius: 5px 0 0 5px;
   outline: none;
   border: none;
-  --webkit-appearance: none;
+  background: white;
 `;
 const Button = styled.button`
   padding: 15px;
@@ -16,7 +16,7 @@ const Button = styled.button`
   border: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  --webkit-appearance: none;
+
   &:hover i {
     transform: scale(1.5);
   }
@@ -55,7 +55,7 @@ const Search = ({ setAnimesearch }) => {
 
   return (
     <div>
-      {error ? <Error msg="Tenes que ingresar un anime correctamente" /> : null}
+      {error ? <Error msg="You can't leave an empty field" /> : null}
       <Form onSubmit={onSubmit}>
         <Input
           type="text"
