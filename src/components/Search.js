@@ -32,7 +32,7 @@ const Search = ({ setAnimesearch }) => {
       return;
     }
     setError(false);
-    setAnimesearch(search);
+    setAnimesearch(anime);
   };
 
   return (

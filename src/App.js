@@ -5,26 +5,26 @@ import axios from "axios";
 
 function App() {
   const [animesearch, setAnimesearch] = useState({});
+  const [anime, setAnime] = useState([]);
 
   useEffect(() => {
     if (Object.keys(animesearch).length === 0) return;
 
     const consultAPI = async () => {
-      const { anime } = animesearch;
-      const url = `https://api.jikan.moe/v3/search/anime?q=${anime}`;
+      const url = `https://api.jikan.moe/v3/search/anime?q=${animesearch}&page=1`;
 
       const result = await axios.get(url);
-      setAnimesearch(result.data.results);
-    };
 
+      setAnime(result.data.results);
+    };
     consultAPI();
-  });
+  }, [animesearch]);
 
   return (
     <div className="App">
       <h2>Esto va a ser una app otaka</h2>
       <Search setAnimesearch={setAnimesearch} />
-      <AnimeList />
+      <AnimeList anime={anime} />
     </div>
   );
 }
