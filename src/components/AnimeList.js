@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import Anime from "./Anime";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { AnimeContext } from "../context/AnimeContext";
 
 const Container = styled.div`
   display: flex;
@@ -10,14 +10,14 @@ const Container = styled.div`
   column-gap: 20px;
 `;
 
-const AnimeList = ({ anime }) => {
+const AnimeList = () => {
+  const { anime } = useContext(AnimeContext);
+
   return (
     <Container>
       {anime.map((animes) => (
-        <Link to={`/search/${animes.mal_id}`}>
-          <Anime key={animes.mal_id} animes={animes} />
-        </Link>
-      ))}
+        <Anime key={animes.mal_id} animes={animes} />
+      ))}{" "}
     </Container>
   );
 };

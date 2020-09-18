@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Error from "./Error";
 import styled from "styled-components";
+import { AnimeContext } from "../context/AnimeContext";
 
 const Input = styled.input`
   width: 30vw;
@@ -26,7 +27,9 @@ const Form = styled.form`
   padding: 15px;
 `;
 
-const Search = ({ setAnimesearch }) => {
+const Search = () => {
+  const { setAnimesearch } = useContext(AnimeContext);
+
   const [search, setSearch] = useState({
     anime: ""
   });

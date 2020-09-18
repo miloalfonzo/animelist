@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { PageContext } from "../context/PageContext";
 
 const Container = styled.div`
   color: black;
 `;
 
-const Show = ({}) => {
-  //console.log(props);
+const Show = () => {
+  const { anime } = useContext(PageContext);
+  //console.log(anime);
   return (
     <Container>
-      <h2>Acá estoy!</h2>
+      <h2> {anime.title}</h2>{" "}
     </Container>
   );
 };

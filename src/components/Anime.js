@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { PageContext } from "../context/PageContext";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 28vw;
@@ -19,9 +21,10 @@ const Container = styled.div`
   i {
     margin: 3px;
   }
-
-  &:hover {
+  button {
     cursor: pointer;
+  }
+  &:hover {
     transform: scale(1.1);
   }
 `;
@@ -35,19 +38,30 @@ const Header = styled.div`
 `;
 
 const Anime = ({ animes }) => {
+  const { setIdanime } = useContext(PageContext);
+
   return (
     <Container>
       <div className="">
         <Header>
-          <h4>{animes.title}</h4>
+          <h4> {animes.title} </h4>{" "}
         </Header>
-
-        <img src={animes.image_url} alt={animes.title} />
+        <img src={animes.image_url} alt={animes.title} />{" "}
         <p>
-          {animes.score}
-          <i className="fas fa-star"></i>
-        </p>
-      </div>
+          {" "}
+          {animes.score} <i className="fas fa-star"> </i>{" "}
+        </p>{" "}
+        <Link to={`/search/${animes.mal_id}`}>
+          <button
+            class="more"
+            onClick={() => {
+              setIdanime(animes.mal_id);
+            }}
+          >
+            look more!
+          </button>{" "}
+        </Link>
+      </div>{" "}
     </Container>
   );
 };
