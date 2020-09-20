@@ -37,7 +37,7 @@ const AniProvider = (props) => {
         setLoading
       }}
     >
-      {props.children}
+      {props.children}{" "}
     </AnimeContext.Provider>
   );
 };

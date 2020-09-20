@@ -23,6 +23,19 @@ const Container = styled.div`
   }
   button {
     cursor: pointer;
+    background: none;
+    border: 0;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    i {
+      font-size: 1.6rem;
+      color: #eb6864;
+      padding-bottom: 1rem;
+    }
   }
   &:hover {
     transform: scale(1.1);
@@ -45,7 +58,7 @@ const Anime = ({ animes }) => {
       <div className="">
         <Header>
           <h4> {animes.title} </h4>{" "}
-        </Header>
+        </Header>{" "}
         <img src={animes.image_url} alt={animes.title} />{" "}
         <p>
           {" "}
@@ -53,14 +66,14 @@ const Anime = ({ animes }) => {
         </p>{" "}
         <Link to={`/search/${animes.mal_id}`}>
           <button
-            class="more"
+            className="more"
             onClick={() => {
               setIdanime(animes.mal_id);
             }}
           >
-            look more!
+            <i className="fas fa-plus-circle"> </i>{" "}
           </button>{" "}
-        </Link>
+        </Link>{" "}
       </div>{" "}
     </Container>
   );
