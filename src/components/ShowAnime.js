@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { PageContext } from "../context/PageContext";
 
 const Container = styled.div`
@@ -65,10 +66,10 @@ const ShowAnime = () => {
             <h4> {anime.title_japanese} </h4> <p> {anime.synopsis} </p>{" "}
             <p> Premiered: {anime.premiered} </p>{" "}
             <p> Rating: {anime.rating} </p>{" "}
-            <a href="/search">
+            <Link to="/search">
               <i className="fas fa-backward"> </i>
               Go back{" "}
-            </a>{" "}
+            </Link>{" "}
           </section>{" "}
         </div>{" "}
       </Body>{" "}
